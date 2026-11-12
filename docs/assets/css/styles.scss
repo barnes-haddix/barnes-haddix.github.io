@@ -1,3 +1,25 @@
 ---
 ---
 @import "main";
+
+.left-column h2 {
+    margin-bottom: 0.3em;
+}
+
+.left-column h2 + p,
+.left-column h2 + ul {
+    margin-top: 0;
+}
+
+.left-column p {
+    margin-top: 0.4em;
+    margin-bottom: 0.5em;
+}
+
+.left-column p + p {
+    margin-top: 0.7em;
+}
+
+.left-column h2 + ul {
+    margin-top: 0.2em;
+}
