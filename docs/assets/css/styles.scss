@@ -23,3 +23,40 @@
 .left-column h2 + ul {
     margin-top: 0.2em;
 }
+
+// Phones / narrow screens: stack the right column under the left.
+// Desktop layout is untouched because this only applies below 768px.
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;  // left column on top, right column below
+        height: auto;            // desktop uses 100vh, which clips content on phones
+        gap: 1.5em;
+    }
+
+    .left-column,
+    .right-column {
+        flex: none;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .right-column {
+        padding: 0;              // body already has padding
+        overflow-y: visible;     // let the page scroll, not the column
+    }
+
+    // Keep the headshot from filling the whole phone screen
+    .left-column img {
+        max-width: 280px;
+    }
+
+    // Stack the two photos instead of squeezing them side by side
+    .flex-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .right-column figure {
+        width: 100%;
+    }
+}
